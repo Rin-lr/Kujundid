@@ -4,11 +4,11 @@ Public Class Kolmnurk
 
     Private korgus As Double
 
-    Public Sub New(ByVal alus As Double, ByVal haar As Double)
+    Public Sub New(alus As Double, haar As Double)
         'kutsume baasklassi'
-        MyBase.New(("Võrdhaarne kolmnurk"), alus, haar, haar))
-            'kolmnurga kõrgus'
-            Me.korgus = Sqrt(haar * haar - (alus * alus / 4))
+        MyBase.New(("Võrdhaarne kolmnurk"), alus, haar, haar)
+        'kolmnurga kõrgus'
+        Me.korgus = Sqrt(haar * haar - (alus * alus / 4))
     End Sub
 
     Public Overrides Function leiaYmberMoot() As Double

@@ -5,8 +5,8 @@ Public MustInherit Class Kujund
     Protected kylgB As Double
     Protected kylgC As Double
     'atribuutide algväärtustamie. Konstruktor
-    Public Sub New(ByVal tyyp As String, ByVal kylgA As Double,
-                   ByVal kylgB As Double, ByVal kylgC As Double)
+    Public Sub New(tyyp As String, kylgA As Double,
+                   kylgB As Double, kylgC As Double)
         Me.tyyp = tyyp
         Me.kylgA = kylgA
         Me.kylgB = kylgB

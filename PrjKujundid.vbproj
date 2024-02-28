@@ -81,6 +81,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Kolmnurk.vb" />
+    <Compile Include="Ristkylik.vb" />
+    <Compile Include="Ruut.vb" />
+    <Compile Include="Nelinurk.vb" />
     <Compile Include="Kujund.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
