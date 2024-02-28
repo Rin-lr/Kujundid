@@ -80,6 +80,7 @@
       <DependentUpon>formKujundid.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Kolmnurk.vb" />
     <Compile Include="Kujund.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
