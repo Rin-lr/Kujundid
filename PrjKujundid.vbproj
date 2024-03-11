@@ -81,7 +81,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Kolmnurk.vb" />
+    <Compile Include="Roopkylik.vb" />
     <Compile Include="Ristkylik.vb" />
+    <Compile Include="Romb.vb" />
     <Compile Include="Ruut.vb" />
     <Compile Include="Nelinurk.vb" />
     <Compile Include="Kujund.vb" />

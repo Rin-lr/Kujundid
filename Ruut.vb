@@ -2,7 +2,7 @@
     Inherits Nelinurk
     ' Konstruktor baasklassi atribuutide väärtustamiseks
     Public Sub New(kylg As Double)
-        ' Baasklassi konstruktori väljakutse
+        'Baasklassi konstruktori väljakutse
         MyBase.New("Ruut", kylg, kylg, kylg, kylg)
     End Sub
     ' Funktsioon arvutab ja tagastab ruudu pindala
