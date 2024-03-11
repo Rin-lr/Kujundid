@@ -39,11 +39,11 @@ Partial Class formKujundid
         Me.btnRoopkulik = New System.Windows.Forms.Button()
         Me.Kujundid = New System.Windows.Forms.GroupBox()
         Me.Algandmed = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtKylgC = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ComboBox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtKylgC = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Kujundid.SuspendLayout()
         Me.Algandmed.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -215,6 +215,23 @@ Partial Class formKujundid
         Me.Algandmed.TabStop = False
         Me.Algandmed.Text = "Algandmed"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(30, 97)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(24, 16)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "c ="
+        '
+        'txtKylgC
+        '
+        Me.txtKylgC.Location = New System.Drawing.Point(61, 94)
+        Me.txtKylgC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtKylgC.Name = "txtKylgC"
+        Me.txtKylgC.Size = New System.Drawing.Size(166, 22)
+        Me.txtKylgC.TabIndex = 12
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label7)
@@ -232,12 +249,14 @@ Partial Class formKujundid
         '
         'ComboBox
         '
+        Me.ComboBox.DisplayMember = "0"
         Me.ComboBox.FormattingEnabled = True
         Me.ComboBox.Items.AddRange(New Object() {"0", "1", "2", "3"})
         Me.ComboBox.Location = New System.Drawing.Point(94, 170)
         Me.ComboBox.Name = "ComboBox"
         Me.ComboBox.Size = New System.Drawing.Size(166, 24)
         Me.ComboBox.TabIndex = 21
+        Me.ComboBox.ValueMember = "0"
         '
         'Label1
         '
@@ -247,23 +266,6 @@ Partial Class formKujundid
         Me.Label1.Size = New System.Drawing.Size(53, 16)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Täpsus"
-        '
-        'txtKylgC
-        '
-        Me.txtKylgC.Location = New System.Drawing.Point(61, 94)
-        Me.txtKylgC.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtKylgC.Name = "txtKylgC"
-        Me.txtKylgC.Size = New System.Drawing.Size(166, 22)
-        Me.txtKylgC.TabIndex = 12
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 97)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(24, 16)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "c ="
         '
         'formKujundid
         '

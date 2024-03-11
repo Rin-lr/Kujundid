@@ -5,14 +5,18 @@ Public Class formKujundid
         'kujundi tyybi valimine'
         lblTyyp.Text = kujund.annaTyyp
 
-        'pindala ja ymbermoot arvutamine ja väljastamine
-        txtPindala.Text = kujund.leiaPindala
-        txtYmbermoot.Text = kujund.leiaYmbermoot
+        If ComboBox.SelectedIndex = -1 Then
+            ComboBox.SelectedIndex = 0
+        Else
+            'pindala ja ymbermoot arvutamine ja väljastamine
+            txtPindala.Text = Math.Round(kujund.leiaPindala, ComboBox.SelectedIndex)
+            txtYmbermoot.Text = Math.Round(kujund.leiaYmberMoot, ComboBox.SelectedIndex)
+        End If
     End Sub
 
     Private Sub Allboxes(ByVal box As Control)
         txtYmbermoot.Enabled = False
-        'txtPindala.Enabled = False
+        txtPindala.Enabled = False
         'txtKylgA.Enabled = False
         'txtKylgB.Enabled = False
     End Sub
@@ -55,7 +59,4 @@ Public Class formKujundid
         tootleKujund(New Roopkylik(txtKylgA.Text, txtKylgB.Text))
     End Sub
 
-    Private Sub ComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox.SelectedIndexChanged
-
-    End Sub
 End Class
