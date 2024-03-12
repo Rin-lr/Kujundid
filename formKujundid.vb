@@ -25,8 +25,12 @@ Public Class formKujundid
         Dim b As Double
         If Double.TryParse(txtKylgA.Text, a) And Double.TryParse(txtKylgB.Text, b) Then
             If (a > 0 And b > 0) Then
-                Dim objektKolmnurk As New Kolmnurk(a, b)
-                tootleKujund(objektKolmnurk)
+                If (a / 2 < b) Then
+                    Dim objektKolmnurk As New Kolmnurk(a, b)
+                    tootleKujund(objektKolmnurk)
+                Else
+                    MsgBox("Selline Võrdhaarne kolmnurk on võimatu. Sisestage a väärtus, mis on väiksem kui b")
+                End If
             Else
                 MsgBox("Sisesta positiivne arv.")
             End If
@@ -87,7 +91,11 @@ Public Class formKujundid
             Double.TryParse(txtKylgB.Text, b) And
             Double.TryParse(txtKylgC.Text, c) Then
             If (a > 0 And b > 0 And c > 0) Then
-                tootleKujund(New Roopkylik(a, b, c))
+                If (b < c) Then
+                    MsgBox("Selline rööpkülik on võimatu. Sisestage c väärtus, mis on väiksem b")
+                Else
+                    tootleKujund(New Roopkylik(a, b, c))
+                End If
             ElseIf (a < 0) Then
                 MsgBox("Sisesta positiivne arv a")
             ElseIf (b < 0) Then
