@@ -5,20 +5,15 @@ Public Class formKujundid
         'kujundi tyybi valimine'
         lblTyyp.Text = kujund.annaTyyp
 
-        If ComboBox.SelectedIndex = -1 Then
-            ComboBox.SelectedIndex = 0
-        Else
-            'pindala ja ymbermoot arvutamine ja väljastamine
-            txtPindala.Text = Math.Round(kujund.leiaPindala, ComboBox.SelectedIndex)
-            txtYmbermoot.Text = Math.Round(kujund.leiaYmberMoot, ComboBox.SelectedIndex)
-        End If
+        'pindala ja ymbermoot arvutamine ja väljastamine
+        txtPindala.Text = Math.Round(kujund.leiaPindala, ComboBox.SelectedIndex)
+        txtYmbermoot.Text = Math.Round(kujund.leiaYmberMoot, ComboBox.SelectedIndex)
     End Sub
 
     Private Sub Allboxes(ByVal box As Control)
         txtYmbermoot.Enabled = False
+        ComboBox.SelectedIndex = 0
         txtPindala.Enabled = False
-        'txtKylgA.Enabled = False
-        'txtKylgB.Enabled = False
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,21 +37,68 @@ Public Class formKujundid
     End Sub
 
     Private Sub btnRuut_Click(sender As Object, e As EventArgs) Handles btnRuut.Click
-        Dim objektRuut As New Ruut(txtKylgA.Text)
-        tootleKujund(objektRuut)
+        Dim a As Double
+        If Double.TryParse(txtKylgA.Text, a) Then
+            If (a > 0) Then
+                Dim objektRuut As New Ruut(a)
+                tootleKujund(objektRuut)
+            Else
+                MsgBox("Sisesta positiivne arv.")
+            End If
+        Else
+            MsgBox("404! Sisesta arv.")
+        End If
     End Sub
 
     Private Sub btnRistkylik_Click(sender As Object, e As EventArgs) Handles btnRistkylik.Click
-        'võib teha sama asja ka nii...'
-        tootleKujund(New Ristkylik(txtKylgA.Text, txtKylgB.Text))
+        Dim a As Double
+        Dim b As Double
+        If Double.TryParse(txtKylgA.Text, a) And Double.TryParse(txtKylgB.Text, b) Then
+            If (a > 0 And b > 0) Then
+                'võib teha sama asja ka nii...'
+                tootleKujund(New Ristkylik(a, b))
+            Else
+                MsgBox("Sisesta positiivne arv.")
+            End If
+        Else
+            MsgBox("404! Sisesta arv.")
+        End If
     End Sub
 
     Private Sub btnRomb_Click(sender As Object, e As EventArgs) Handles btnRomb.Click
-        tootleKujund(New Romb(txtKylgA.Text, txtKylgB.Text))
+        Dim a As Double
+        Dim b As Double
+        If Double.TryParse(txtKylgA.Text, a) And Double.TryParse(txtKylgB.Text, b) Then
+            If (a > 0 And b > 0) Then
+                tootleKujund(New Romb(a, b))
+            Else
+                MsgBox("Sisesta positiivne arv.")
+            End If
+        Else
+            MsgBox("404! Sisesta arv.")
+        End If
     End Sub
 
     Private Sub btnRoopkulik_Click(sender As Object, e As EventArgs) Handles btnRoopkulik.Click
-        tootleKujund(New Roopkylik(txtKylgA.Text, txtKylgB.Text))
+        Dim a As Double
+        Dim b As Double
+        Dim c As Double
+        If Double.TryParse(txtKylgA.Text, a) And
+            Double.TryParse(txtKylgB.Text, b) And
+            Double.TryParse(txtKylgC.Text, c) Then
+            If (a > 0 And b > 0 And c > 0) Then
+                tootleKujund(New Roopkylik(a, b, c))
+            ElseIf (a < 0) Then
+                MsgBox("Sisesta positiivne arv a")
+            ElseIf (b < 0) Then
+                MsgBox("Sisesta positiivne arv b")
+            ElseIf (c < 0) Then
+                MsgBox("Sisesta positiivne arv c")
+            End If
+        Else
+            MsgBox("Sisesta arv kõikidesse väljadesse.")
+        End If
+
     End Sub
 
 End Class
